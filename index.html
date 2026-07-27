@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revenue Manifest — Jupiter Courier Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.4.4/chart.umd.min.js"></script>
+<style>
+  :root{
+    --bg: #F7F7F4;
+    --surface: #FFFFFF;
+    --ink: #1B2430;
+    --ink-soft: #5C6675;
+    --border: #E2E4E0;
+    --border-strong: #CBCFC9;
+    --navy: #1F3A52;
+    --navy-soft: #EAF0F3;
+    --amber: #D98E2F;
+    --amber-soft: #FBF0DE;
+    --good: #2E7D5B;
+    --good-soft: #E8F3EC;
+    --bad: #B5453B;
+    --bad-soft: #FBEAE8;
+    --radius: 10px;
+    --shadow: 0 1px 2px rgba(27,36,48,0.04), 0 1px 12px rgba(27,36,48,0.05);
+  }
+
+  *{ box-sizing: border-box; }
+
+  body{
+    margin:0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', system-ui, sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1,h2,h3{
+    font-family: 'Space Grotesk', 'IBM Plex Sans', sans-serif;
+    font-weight: 600;
+    margin: 0;
+  }
+
+  .num, .mono{
+    font-family: 'IBM Plex Mono', monospace;
+    font-variant-numeric: tabular-nums;
+  }
+
+  a{ color: var(--navy); }
+
+  button{
+    font-family: inherit;
+    cursor: pointer;
+  }
+
+  button:focus-visible, select:focus-visible, [tabindex]:focus-visible, input:focus-visible{
+    outline: 2px solid var(--navy);
+    outline-offset: 2px;
+  }
+
+  /* ---------- Layout shell ---------- */
+  .wrap{
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 24px 64px;
+  }
+
+  header.top{
+    padding: 32px 24px 0;
+    max-width: 1180px;
+    margin: 0 auto;
+  }
+
+  .top-row{
+    display:flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .brand-eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 11px;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--ink-soft);
+    margin-bottom: 6px;
+  }
+
+  header.top h1{
+    font-size: 26px;
+    letter-spacing: -0.01em;
+  }
+
+  .controls{
+    display:flex;
+    gap: 10px;
+    flex-wrap: wrap;
+    align-items:center;
+  }
+
+  .control{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 8px 12px;
+    font-size: 13px;
+    color: var(--ink);
+    display:flex;
+    align-items:center;
+    gap: 8px;
+  }
+
+  select{
+    border:none;
+    background:transparent;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--ink);
+    cursor:pointer;
+  }
+
+  .toggle-group{
+    display:flex;
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 3px;
+    gap: 2px;
+  }
+
+  .toggle-btn{
+    border:none;
+    background:transparent;
+    padding: 6px 12px;
+    border-radius: 6px;
+    font-size: 13px;
+    color: var(--ink-soft);
+  }
+
+  .toggle-btn.active{
+    background: var(--navy);
+    color: #fff;
+  }
+
+  /* ---------- Perforated signature divider ---------- */
+  .perf{
+    height: 18px;
+    margin: 28px 0 8px;
+    background-image: radial-gradient(circle, var(--border-strong) 1.6px, transparent 1.7px);
+    background-size: 14px 14px;
+    background-position: 0 center;
+    opacity: 0.9;
+  }
+  .perf-label{
+    text-align:center;
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 10px;
+    letter-spacing: 0.12em;
+    text-transform:uppercase;
+    color: var(--border-strong);
+    margin-bottom: 24px;
+  }
+
+  /* ---------- KPI row ---------- */
+  .kpi-grid{
+    display:grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+  }
+
+  .kpi-card{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 18px 18px 16px;
+    box-shadow: var(--shadow);
+    position:relative;
+  }
+
+  .kpi-label{
+    font-size: 12px;
+    color: var(--ink-soft);
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    margin-bottom: 10px;
+  }
+
+  .kpi-value{
+    font-size: 26px;
+    font-weight: 500;
+    line-height:1;
+  }
+
+  .kpi-sub{
+    margin-top: 8px;
+    font-size: 12px;
+    color: var(--ink-soft);
+  }
+
+  .delta{
+    font-family:'IBM Plex Mono', monospace;
+    font-size: 12px;
+    padding: 2px 7px;
+    border-radius: 5px;
+    font-weight:500;
+  }
+  .delta.good{ background: var(--good-soft); color: var(--good); }
+  .delta.bad{ background: var(--bad-soft); color: var(--bad); }
+  .delta.flat{ background: var(--border); color: var(--ink-soft); }
+
+  .expand-btn{
+    border:none;
+    background:transparent;
+    color: var(--ink-soft);
+    font-size: 11px;
+    padding: 0;
+    display:flex;
+    align-items:center;
+    gap: 4px;
+  }
+  .expand-btn:hover{ color: var(--navy); }
+
+  .breakdown{
+    display:none;
+    margin-top: 12px;
+    padding-top: 12px;
+    border-top: 1px dashed var(--border-strong);
+  }
+  .breakdown.open{ display:block; }
+  .breakdown-row{
+    display:flex;
+    justify-content:space-between;
+    font-size: 12px;
+    padding: 3px 0;
+    color: var(--ink);
+  }
+  .breakdown-row span:last-child{
+    font-family:'IBM Plex Mono', monospace;
+    color: var(--ink-soft);
+  }
+
+  /* ---------- Chart section ---------- */
+  .panel{
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    padding: 20px;
+    margin-top: 16px;
+  }
+
+  .panel-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom: 16px;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .panel-head h2{ font-size: 15px; }
+  .panel-note{ font-size: 12px; color: var(--ink-soft); }
+
+  .chart-holder{ position: relative; height: 320px; }
+
+  /* ---------- Table ---------- */
+  table{
+    width:100%;
+    border-collapse: collapse;
+    font-size: 13px;
+  }
+  th, td{
+    text-align:left;
+    padding: 10px 8px;
+    border-bottom: 1px solid var(--border);
+  }
+  th{
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--ink-soft);
+    font-weight: 500;
+    cursor: pointer;
+    user-select: none;
+  }
+  th:hover{ color: var(--navy); }
+  td.num, th.num{ text-align:right; font-family:'IBM Plex Mono', monospace; }
+  tr:last-child td{ border-bottom:none; }
+  .cust-name{ font-weight: 500; }
+
+  /* ---------- Footer / data source ---------- */
+  .footer-panel{
+    display:grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: 16px;
+  }
+  .status-line{
+    font-size: 12px;
+    color: var(--ink-soft);
+    line-height: 1.6;
+  }
+  .status-dot{
+    display:inline-block;
+    width:7px; height:7px;
+    border-radius:50%;
+    background: var(--good);
+    margin-right:6px;
+  }
+  .status-dot.err{ background: var(--bad); }
+
+  .drop-zone{
+    border: 1.5px dashed var(--border-strong);
+    border-radius: 8px;
+    padding: 16px;
+    text-align:center;
+    font-size: 12px;
+    color: var(--ink-soft);
+    background: var(--bg);
+    cursor:pointer;
+  }
+  .drop-zone:hover{ border-color: var(--navy); color: var(--navy); }
+  .drop-zone.drag{ border-color: var(--amber); background: var(--amber-soft); }
+
+  .btn{
+    border: 1px solid var(--border-strong);
+    background: var(--surface);
+    color: var(--ink);
+    border-radius: 7px;
+    padding: 7px 12px;
+    font-size: 12px;
+  }
+  .btn:hover{ border-color: var(--navy); color: var(--navy); }
+  .btn.primary{ background: var(--navy); color:#fff; border-color: var(--navy); }
+  .btn.primary:hover{ opacity: 0.9; }
+
+  .empty-state{
+    text-align:center;
+    padding: 48px 20px;
+    color: var(--ink-soft);
+    font-size: 13px;
+  }
+  .empty-state strong{ color: var(--ink); display:block; margin-bottom: 6px; font-size: 14px;}
+
+  @media (max-width: 860px){
+    .kpi-grid{ grid-template-columns: repeat(2, 1fr); }
+    .footer-panel{ grid-template-columns: 1fr; }
+  }
+  @media (max-width: 560px){
+    .kpi-grid{ grid-template-columns: 1fr; }
+    .top-row{ flex-direction: column; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ animation: none !important; transition: none !important; }
+  }
+</style>
+</head>
+<body>
+
+<header class="top">
+  <div class="top-row">
+    <div>
+      <div class="brand-eyebrow">Jupiter Courier Services · Consignment Ledger</div>
+      <h1>Revenue Manifest</h1>
+    </div>
+    <div class="controls">
+      <div class="control">
+        <span>Month</span>
+        <select id="monthSelect"></select>
+      </div>
+      <div class="toggle-group" id="customerToggle"></div>
+    </div>
+  </div>
+</header>
+
+<div class="perf" aria-hidden="true"></div>
+<div class="perf-label">— tear along data line —</div>
+
+<main class="wrap">
+
+  <div id="emptyState" class="empty-state" style="display:none;"></div>
+
+  <div id="dashboardBody" style="display:none;">
+
+    <section class="kpi-grid" id="kpiGrid"></section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2 id="chartTitle">Revenue by month</h2>
+        <div class="toggle-group" id="chartTabs">
+          <button class="toggle-btn active" data-tab="overview">Overview</button>
+          <button class="toggle-btn" data-tab="trend">Trend / YoY</button>
+        </div>
+      </div>
+      <div class="panel-note" id="chartNote" style="margin-bottom:12px;"></div>
+      <div class="chart-holder"><canvas id="mainChart"></canvas></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head">
+        <h2>Customer leaderboard — <span id="leaderboardMonth"></span></h2>
+        <span class="panel-note">Click a column to sort</span>
+      </div>
+      <table id="leaderboardTable">
+        <thead>
+          <tr>
+            <th data-key="customer" tabindex="0" role="button">Customer</th>
+            <th data-key="revenue" class="num" tabindex="0" role="button">Revenue</th>
+            <th data-key="orders" class="num" tabindex="0" role="button">Orders</th>
+            <th data-key="aov" class="num" tabindex="0" role="button">Avg order</th>
+            <th data-key="share" class="num" tabindex="0" role="button">Share</th>
+            <th data-key="mom" class="num" tabindex="0" role="button">MoM</th>
+          </tr>
+        </thead>
+        <tbody id="leaderboardBody"></tbody>
+      </table>
+    </section>
+
+  </div>
+
+  <section class="panel footer-panel">
+    <div>
+      <h2 style="margin-bottom:8px;">Data source</h2>
+      <p class="status-line" id="statusLine"><span class="status-dot"></span>Checking GitHub…</p>
+      <p class="status-line">New invoice JSON files are added via GitHub's web upload screen — nothing to install.</p>
+      <div style="display:flex; gap:8px; margin-top:10px; flex-wrap:wrap;">
+        <button class="btn primary" id="openGithubBtn">Open data folder on GitHub</button>
+        <button class="btn" id="refreshBtn">Refresh data</button>
+      </div>
+    </div>
+    <div>
+      <h2 style="margin-bottom:8px; font-size:15px;">Preview a file (not saved)</h2>
+      <div class="drop-zone" id="dropZone" role="button" tabindex="0" aria-label="Choose or drop an invoice JSON file to preview">
+        Drop an invoice JSON here, or click to choose one<br>
+        <span style="font-size:11px;">Preview only — upload it on GitHub to make it count for everyone</span>
+      </div>
+      <input type="file" id="fileInput" accept="application/json" style="display:none;">
+    </div>
+  </section>
+
+</main>
+
+<script>
+/* =========================================================================
+   CONFIG — edit these three values for your repo, then this file just works.
+   ========================================================================= */
+const CONFIG = {
+  owner: 'shannonluiz78',
+  repo:  'jupitercouriermgtdashboard',
+  branch: 'main',
+  dataPath: 'data/raw'             // folder where monthly invoice JSON files live
+};
+
+// Fallback display names when an invoice's customerName field is blank.
+// Matches if ANY alias appears anywhere in the filename (case-insensitive) —
+// works for "BT_INV-7377.json", "BreadTalk JULY 2026 INVOICE.json", etc.
+const CUSTOMER_ALIASES = [
+  { name: 'Charles Monat Associates', aliases: ['CMA'] },
+  { name: 'BreadTalk',                aliases: ['BT', 'BreadTalk'] }
+];
+
+/* ========================================================================= */
+
+let ALL_ORDERS = [];         // normalized line-item records, deduped
+let PREVIEW_ORDERS = [];     // orders added via local preview only (session-only)
+let state = {
+  month: null,               // 'YYYY-MM'
+  customer: 'ALL',
+  chartTab: 'overview',
+  sortKey: 'revenue',
+  sortDir: 'desc'
+};
+let chartInstance = null;
+
+/* ---------------- Fetch + normalize ---------------- */
+
+async function loadFromGithub(){
+  const apiUrl = `https://api.github.com/repos/${CONFIG.owner}/${CONFIG.repo}/contents/${CONFIG.dataPath}?ref=${CONFIG.branch}`;
+  const res = await fetch(apiUrl, { headers: { 'Accept': 'application/vnd.github+json' } });
+  if(!res.ok){
+    let extra = '';
+    if(res.status === 403) extra = ' This usually means GitHub\'s anonymous rate limit (60 requests/hour) was hit from repeated testing — wait a bit and refresh.';
+    if(res.status === 404) extra = ' Check that the repo is Public, and that owner/repo/branch/dataPath in CONFIG match exactly.';
+    throw new Error(`GitHub returned ${res.status}.${extra}`);
+  }
+  const listing = await res.json();
+  const jsonFiles = (Array.isArray(listing) ? listing : []).filter(f => f.name.toLowerCase().endsWith('.json'));
+  if(jsonFiles.length === 0){
+    throw new Error('No JSON files found in the data folder yet.');
+  }
+
+  const fileContents = await Promise.all(jsonFiles.map(async f => {
+    const r = await fetch(f.download_url);
+    const json = await r.json();
+    return { filename: f.name, json };
+  }));
+
+  const orders = [];
+  fileContents.forEach(({filename, json}) => normalizeInvoice(filename, json, orders));
+  return dedupe(orders);
+}
+
+function resolveCustomerName(filename, meta){
+  const declared = (meta && meta.customerName || '').trim();
+  if(declared) return declared;
+  const upperFilename = filename.toUpperCase();
+  const match = CUSTOMER_ALIASES.find(entry =>
+    entry.aliases.some(alias => upperFilename.includes(alias.toUpperCase()))
+  );
+  if(match) return match.name;
+  // Last-resort fallback: strip extension so at least it's readable.
+  return filename.replace(/\.json$/i, '');
+}
+
+function normalizeInvoice(filename, json, outArr){
+  const meta = json.meta || {};
+  const customer = resolveCustomerName(filename, meta);
+  const items = Array.isArray(json.items) ? json.items : [];
+  items.forEach(item => {
+    const qty = Number(item.qty) || 0;
+    const rate = Number(item.rate) || 0;
+    const surcharge = Number(item.surcharge) || 0;
+    outArr.push({
+      invoiceNo: meta.invoiceNo || filename,
+      customer,
+      orderDate: item.orderDate || meta.invoiceDate,
+      month: (item.orderDate || meta.invoiceDate || '').slice(0,7),
+      serviceType: item.serviceType || 'Unspecified',
+      qty, rate, surcharge,
+      lineTotal: qty * rate + surcharge,
+      consignNbr: item.consignNbr || '',
+      pickup: item.pickup || '',
+      dropoff: item.dropoff || ''
+    });
+  });
+}
+
+function dedupe(orders){
+  const seen = new Set();
+  const out = [];
+  orders.forEach(o => {
+    const key = `${o.invoiceNo}__${o.consignNbr}__${o.orderDate}`;
+    if(seen.has(key)) return;
+    seen.add(key);
+    out.push(o);
+  });
+  return out;
+}
+
+/* ---------------- Aggregation ---------------- */
+
+function activePool(){
+  const pool = ALL_ORDERS.concat(PREVIEW_ORDERS);
+  return state.customer === 'ALL' ? pool : pool.filter(o => o.customer === state.customer);
+}
+
+function monthsAvailable(){
+  const pool = ALL_ORDERS.concat(PREVIEW_ORDERS);
+  return [...new Set(pool.map(o => o.month))].filter(Boolean).sort();
+}
+
+function customersAvailable(){
+  const pool = ALL_ORDERS.concat(PREVIEW_ORDERS);
+  return [...new Set(pool.map(o => o.customer))].sort();
+}
+
+function monthTotals(pool, month){
+  const rows = pool.filter(o => o.month === month);
+  const revenue = rows.reduce((s,o) => s + o.lineTotal, 0);
+  return { revenue, orders: rows.length };
+}
+
+function prevMonthStr(month){
+  const [y,m] = month.split('-').map(Number);
+  const d = new Date(y, m-2, 1); // m is 1-indexed, go back one
+  return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}`;
+}
+function prevYearStr(month){
+  const [y,m] = month.split('-').map(Number);
+  return `${y-1}-${String(m).padStart(2,'0')}`;
+}
+
+function pctChange(curr, prev){
+  if(prev === 0 || prev == null) return null;
+  return ((curr - prev) / prev) * 100;
+}
+
+function byCustomerForMonth(pool, month){
+  const rows = pool.filter(o => o.month === month);
+  const map = {};
+  rows.forEach(o => {
+    if(!map[o.customer]) map[o.customer] = { revenue:0, orders:0 };
+    map[o.customer].revenue += o.lineTotal;
+    map[o.customer].orders += 1;
+  });
+  return map;
+}
+
+/* ---------------- Rendering ---------------- */
+
+function fmtMoney(n){
+  return 'S$' + (Math.round(n*100)/100).toLocaleString('en-SG', {minimumFractionDigits:2, maximumFractionDigits:2});
+}
+function fmtPct(n){
+  if(n === null || n === undefined || !isFinite(n)) return 'N/A';
+  const sign = n > 0 ? '+' : '';
+  return `${sign}${n.toFixed(1)}%`;
+}
+function deltaClass(n){
+  if(n === null || n === undefined || !isFinite(n)) return 'flat';
+  if(n > 0.05) return 'good';
+  if(n < -0.05) return 'bad';
+  return 'flat';
+}
+
+function renderMonthSelect(){
+  const sel = document.getElementById('monthSelect');
+  const months = monthsAvailable();
+  sel.innerHTML = months.slice().reverse().map(m => `<option value="${m}">${m}</option>`).join('');
+  if(!state.month || !months.includes(state.month)){
+    state.month = months[months.length-1];
+  }
+  sel.value = state.month;
+}
+
+function renderCustomerToggle(){
+  const wrap = document.getElementById('customerToggle');
+  const customers = ['ALL', ...customersAvailable()];
+  wrap.innerHTML = customers.map(c =>
+    `<button class="toggle-btn ${state.customer===c?'active':''}" data-customer="${c}">${c==='ALL'?'All customers':c}</button>`
+  ).join('');
+  wrap.querySelectorAll('button').forEach(btn => {
+    btn.addEventListener('click', () => {
+      state.customer = btn.dataset.customer;
+      renderAll();
+    });
+  });
+}
+
+function renderKPIs(){
+  const pool = activePool();
+  const month = state.month;
+  const prevMonth = prevMonthStr(month);
+  const prevYear = prevYearStr(month);
+
+  const curr = monthTotals(pool, month);
+  const prevM = monthTotals(pool, prevMonth);
+  const prevY = monthTotals(pool, prevYear);
+
+  const momRevenue = monthsAvailable().includes(prevMonth) ? pctChange(curr.revenue, prevM.revenue) : null;
+  const yoyRevenue = monthsAvailable().includes(prevYear) ? pctChange(curr.revenue, prevY.revenue) : null;
+  const aov = curr.orders > 0 ? curr.revenue / curr.orders : 0;
+
+  const byCust = byCustomerForMonth(pool, month);
+  let topCustomer = null, topRevenue = -1;
+  Object.entries(byCust).forEach(([cust, v]) => { if(v.revenue > topRevenue){ topRevenue = v.revenue; topCustomer = cust; } });
+  const topShare = curr.revenue > 0 && topCustomer ? (byCust[topCustomer].revenue / curr.revenue * 100) : null;
+
+  const revenueBreakdownHTML = Object.entries(byCust)
+    .sort((a,b) => b[1].revenue - a[1].revenue)
+    .map(([c,v]) => `<div class="breakdown-row"><span>${c}</span><span>${fmtMoney(v.revenue)}</span></div>`).join('');
+  const ordersBreakdownHTML = Object.entries(byCust)
+    .sort((a,b) => b[1].orders - a[1].orders)
+    .map(([c,v]) => `<div class="breakdown-row"><span>${c}</span><span>${v.orders}</span></div>`).join('');
+
+  const cards = [
+    {
+      id: 'kpi-revenue', label: 'Total revenue', value: fmtMoney(curr.revenue),
+      expandable:true, breakdown: revenueBreakdownHTML
+    },
+    {
+      id: 'kpi-mom', label: 'MoM revenue', value: fmtPct(momRevenue), isDeltaValue:true, deltaRaw: momRevenue,
+      sub: monthsAvailable().includes(prevMonth) ? `vs ${prevMonth}` : 'no prior month yet'
+    },
+    {
+      id: 'kpi-yoy', label: 'YoY revenue', value: fmtPct(yoyRevenue), isDeltaValue:true, deltaRaw: yoyRevenue,
+      sub: monthsAvailable().includes(prevYear) ? `vs ${prevYear}` : 'needs 12+ months of history'
+    },
+    {
+      id: 'kpi-orders', label: 'Total orders', value: String(curr.orders),
+      expandable:true, breakdown: ordersBreakdownHTML
+    },
+    {
+      id: 'kpi-aov', label: 'Average order value', value: fmtMoney(aov), sub: `${curr.orders} order${curr.orders===1?'':'s'} this month`
+    },
+    {
+      id: 'kpi-top', label: 'Top customer this month', value: topCustomer || '—',
+      sub: topShare !== null ? `${fmtMoney(topRevenue)} · ${topShare.toFixed(0)}% of revenue` : 'no orders yet'
+    }
+  ];
+
+  const grid = document.getElementById('kpiGrid');
+  grid.innerHTML = cards.map(c => `
+    <div class="kpi-card">
+      <div class="kpi-label">
+        <span>${c.label}</span>
+        ${c.isDeltaValue ? '' : (c.expandable ? `<button class="expand-btn" data-expand="${c.id}">breakdown ▾</button>` : '')}
+      </div>
+      ${c.isDeltaValue
+        ? `<div class="kpi-value num"><span class="delta ${deltaClass(c.deltaRaw)}" style="font-size:22px; padding:0; background:transparent;">${c.value}</span></div>`
+        : `<div class="kpi-value num">${c.value}</div>`}
+      ${c.sub ? `<div class="kpi-sub">${c.sub}</div>` : ''}
+      ${c.expandable ? `<div class="breakdown" id="breakdown-${c.id}">${c.breakdown || '<div class="breakdown-row"><span>No data</span></div>'}</div>` : ''}
+    </div>
+  `).join('');
+
+  grid.querySelectorAll('[data-expand]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const id = btn.dataset.expand;
+      document.getElementById(`breakdown-${id}`).classList.toggle('open');
+    });
+  });
+}
+
+function renderChart(){
+  const canvas = document.getElementById('mainChart');
+  const ctx = canvas.getContext('2d');
+  const pool = activePool();
+  const months = monthsAvailable();
+  const note = document.getElementById('chartNote');
+  const title = document.getElementById('chartTitle');
+
+  if(chartInstance){ chartInstance.destroy(); }
+
+  if(state.chartTab === 'overview'){
+    title.textContent = 'Revenue by month, by customer';
+    note.textContent = state.customer === 'ALL'
+      ? 'Stacked bars show each customer\'s share; the line is total revenue.'
+      : `Showing ${state.customer} only. Switch to "All customers" to compare.`;
+
+    const customers = state.customer === 'ALL' ? customersAvailable() : [state.customer];
+    const palette = ['#1F3A52', '#D98E2F', '#5C6675', '#2E7D5B', '#B5453B', '#7C8FA6'];
+    const datasets = customers.map((c, i) => ({
+      type: 'bar',
+      label: c,
+      data: months.map(m => byCustomerForMonth(pool, m)[c]?.revenue || 0),
+      backgroundColor: palette[i % palette.length],
+      stack: 'rev'
+    }));
+    datasets.push({
+      type: 'line',
+      label: 'Total',
+      data: months.map(m => monthTotals(pool, m).revenue),
+      borderColor: '#1B2430',
+      backgroundColor: 'transparent',
+      borderWidth: 2,
+      pointRadius: 3,
+      tension: 0.25
+    });
+
+    chartInstance = new Chart(ctx, {
+      data: { labels: months, datasets },
+      options: {
+        responsive:true, maintainAspectRatio:false,
+        scales: {
+          x: { stacked: true, grid: { display:false } },
+          y: { stacked: true, ticks: { callback: v => 'S$'+v } }
+        },
+        plugins: { legend: { position:'bottom', labels:{ boxWidth:10, font:{size:11} } } }
+      }
+    });
+  } else {
+    title.textContent = 'Revenue trend — year over year';
+    const years = [...new Set(months.map(m => m.slice(0,4)))];
+    if(years.length < 2){
+      note.textContent = 'Only one year of data so far — the year-over-year overlay will appear once a second year is available.';
+    } else {
+      note.textContent = 'Each line is one year, aligned by calendar month.';
+    }
+    const palette = ['#1F3A52', '#D98E2F', '#2E7D5B', '#B5453B'];
+    const monthLabels = ['01','02','03','04','05','06','07','08','09','10','11','12'];
+    const datasets = years.map((y, i) => ({
+      type:'line',
+      label: y,
+      data: monthLabels.map(mm => {
+        const key = `${y}-${mm}`;
+        return months.includes(key) ? monthTotals(pool, key).revenue : null;
+      }),
+      borderColor: palette[i % palette.length],
+      backgroundColor: 'transparent',
+      spanGaps: true,
+      borderWidth: 2,
+      pointRadius: 3,
+      tension: 0.25
+    }));
+    chartInstance = new Chart(ctx, {
+      data: { labels: monthLabels, datasets },
+      options: {
+        responsive:true, maintainAspectRatio:false,
+        scales: { y: { ticks: { callback: v => 'S$'+v } } },
+        plugins: { legend: { position:'bottom', labels:{ boxWidth:10, font:{size:11} } } }
+      }
+    });
+  }
+}
+
+function renderLeaderboard(){
+  const pool = activePool();
+  const month = state.month;
+  const prevMonth = prevMonthStr(month);
+  document.getElementById('leaderboardMonth').textContent = month || '';
+
+  const byCust = byCustomerForMonth(pool, month);
+  const byCustPrev = byCustomerForMonth(pool, prevMonth);
+  const totalRevenue = Object.values(byCust).reduce((s,v)=>s+v.revenue,0);
+
+  let rows = Object.entries(byCust).map(([customer, v]) => {
+    const prevRev = byCustPrev[customer]?.revenue;
+    return {
+      customer,
+      revenue: v.revenue,
+      orders: v.orders,
+      aov: v.orders ? v.revenue / v.orders : 0,
+      share: totalRevenue ? (v.revenue / totalRevenue * 100) : 0,
+      mom: (prevRev !== undefined) ? pctChange(v.revenue, prevRev) : null
+    };
+  });
+
+  rows.sort((a,b) => {
+    const dir = state.sortDir === 'asc' ? 1 : -1;
+    const av = a[state.sortKey], bv = b[state.sortKey];
+    if(av === null) return 1;
+    if(bv === null) return -1;
+    if(typeof av === 'string') return av.localeCompare(bv) * dir;
+    return (av - bv) * dir;
+  });
+
+  const tbody = document.getElementById('leaderboardBody');
+  if(rows.length === 0){
+    tbody.innerHTML = `<tr><td colspan="6" style="text-align:center; color:var(--ink-soft); padding:24px;">No orders for this month.</td></tr>`;
+    return;
+  }
+  tbody.innerHTML = rows.map(r => `
+    <tr>
+      <td class="cust-name">${r.customer}</td>
+      <td class="num">${fmtMoney(r.revenue)}</td>
+      <td class="num">${r.orders}</td>
+      <td class="num">${fmtMoney(r.aov)}</td>
+      <td class="num">${r.share.toFixed(0)}%</td>
+      <td class="num"><span class="delta ${deltaClass(r.mom)}">${fmtPct(r.mom)}</span></td>
+    </tr>
+  `).join('');
+}
+
+function renderAll(){
+  if(!state.month) return;
+  renderMonthSelect();
+  renderCustomerToggle();
+  renderKPIs();
+  renderChart();
+  renderLeaderboard();
+}
+
+/* ---------------- Status / errors ---------------- */
+
+function setStatus(ok, message){
+  const line = document.getElementById('statusLine');
+  line.innerHTML = `<span class="status-dot ${ok?'':'err'}"></span>${message}`;
+}
+
+function showEmptyState(message){
+  document.getElementById('dashboardBody').style.display = 'none';
+  const el = document.getElementById('emptyState');
+  el.style.display = 'block';
+  el.innerHTML = `<strong>Couldn't load revenue data</strong>${message}`;
+}
+
+/* ---------------- Local preview (session only, not saved) ---------------- */
+
+function handlePreviewFile(file){
+  const reader = new FileReader();
+  reader.onload = (e) => {
+    try{
+      const json = JSON.parse(e.target.result);
+      const tmp = [];
+      normalizeInvoice(file.name, json, tmp);
+      PREVIEW_ORDERS = dedupe(PREVIEW_ORDERS.concat(tmp));
+      setStatus(true, `Previewing ${file.name} locally (not saved — upload it on GitHub to make it permanent). <a href="#" id="clearPreview">Clear preview</a>`);
+      document.getElementById('clearPreview').addEventListener('click', (ev) => {
+        ev.preventDefault();
+        PREVIEW_ORDERS = [];
+        initDashboard(true);
+      });
+      document.getElementById('dashboardBody').style.display = 'block';
+      document.getElementById('emptyState').style.display = 'none';
+      renderAll();
+    } catch(err){
+      alert('That file could not be read as invoice JSON: ' + err.message);
+    }
+  };
+  reader.readAsText(file);
+}
+
+/* ---------------- Init ---------------- */
+
+async function initDashboard(skipFetch){
+  if(!skipFetch){
+    setStatus(true, 'Checking GitHub…');
+    try{
+      ALL_ORDERS = await loadFromGithub();
+      setStatus(true, `Loaded ${ALL_ORDERS.length} consignments from <strong>${CONFIG.owner}/${CONFIG.repo}</strong> · last checked ${new Date().toLocaleTimeString()}`);
+    } catch(err){
+      setStatus(false, err.message);
+      if(ALL_ORDERS.length === 0 && PREVIEW_ORDERS.length === 0){
+        showEmptyState(`<p>${err.message}</p><p>Set your GitHub username and repo name in the CONFIG block near the top of this file's script.</p>`);
+        return;
+      }
+    }
+  }
+  if(ALL_ORDERS.length === 0 && PREVIEW_ORDERS.length === 0){
+    showEmptyState('<p>No invoice files found yet. Upload one to <code>' + CONFIG.dataPath + '</code> on GitHub, or drop one in the preview box below to try it out first.</p>');
+    return;
+  }
+  if(monthsAvailable().length === 0){
+    showEmptyState('<p>Found invoice data, but none of it has a usable order date or invoice date, so it can\'t be grouped by month. Check the <code>orderDate</code> / <code>invoiceDate</code> fields in the source JSON.</p>');
+    return;
+  }
+  document.getElementById('dashboardBody').style.display = 'block';
+  document.getElementById('emptyState').style.display = 'none';
+  renderAll();
+}
+
+/* ---------------- Event wiring ---------------- */
+
+document.getElementById('monthSelect').addEventListener('change', (e) => {
+  state.month = e.target.value;
+  renderKPIs(); renderChart(); renderLeaderboard();
+});
+
+document.querySelectorAll('#chartTabs .toggle-btn').forEach(btn => {
+  btn.addEventListener('click', () => {
+    document.querySelectorAll('#chartTabs .toggle-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.chartTab = btn.dataset.tab;
+    renderChart();
+  });
+});
+
+function sortByKey(key){
+  if(state.sortKey === key){ state.sortDir = state.sortDir === 'asc' ? 'desc' : 'asc'; }
+  else { state.sortKey = key; state.sortDir = 'desc'; }
+  renderLeaderboard();
+}
+document.querySelectorAll('#leaderboardTable th').forEach(th => {
+  th.addEventListener('click', () => sortByKey(th.dataset.key));
+  th.addEventListener('keydown', (e) => {
+    if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); sortByKey(th.dataset.key); }
+  });
+});
+
+document.getElementById('refreshBtn').addEventListener('click', () => initDashboard(false));
+document.getElementById('openGithubBtn').addEventListener('click', () => {
+  window.open(`https://github.com/${CONFIG.owner}/${CONFIG.repo}/tree/${CONFIG.branch}/${CONFIG.dataPath}`, '_blank');
+});
+
+const dropZone = document.getElementById('dropZone');
+const fileInput = document.getElementById('fileInput');
+dropZone.addEventListener('click', () => fileInput.click());
+dropZone.addEventListener('keydown', (e) => {
+  if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); fileInput.click(); }
+});
+fileInput.addEventListener('change', (e) => { if(e.target.files[0]) handlePreviewFile(e.target.files[0]); });
+['dragover','dragenter'].forEach(evt => dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.add('drag'); }));
+['dragleave','drop'].forEach(evt => dropZone.addEventListener(evt, e => { e.preventDefault(); dropZone.classList.remove('drag'); }));
+dropZone.addEventListener('drop', (e) => { if(e.dataTransfer.files[0]) handlePreviewFile(e.dataTransfer.files[0]); });
+
+initDashboard(false);
+</script>
+</body>
+</html>
