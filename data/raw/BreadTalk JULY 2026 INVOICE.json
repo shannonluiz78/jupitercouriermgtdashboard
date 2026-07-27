@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "INV-7377",
+    "invoiceDate": "2026-07-26",
+    "dueDate": "2026-08-25",
+    "gstRate": "9",
+    "customerName": "BreakTalk IHQ",
+    "customerAttn": "Tan",
+    "customerAddress": "Tai Seng Road",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 18,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-02",
+      "pickup": "BreadTalk IHQ",
+      "dropoff": "maybank",
+      "consignNbr": "1001",
+      "notes": "Same-day delivery (11:00am cut-off)"
+    },
+    {
+      "serviceType": "Document",
+      "region": "East|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-03",
+      "pickup": "BreadTalk IHQ",
+      "dropoff": "tampines",
+      "consignNbr": "1002",
+      "notes": ""
+    },
+    {
+      "serviceType": "Document",
+      "region": "North|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-09",
+      "pickup": "BreadTalk IHQ",
+      "dropoff": "Yishun",
+      "consignNbr": "1003",
+      "notes": ""
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 18,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-22",
+      "pickup": "BreadTalk IHQ",
+      "dropoff": "Maybank",
+      "consignNbr": "1004",
+      "notes": ""
+    },
+    {
+      "serviceType": "Quick Service",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 35,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-24",
+      "pickup": "BreadTalk IHQ",
+      "dropoff": "Jewel",
+      "consignNbr": "1005",
+      "notes": ""
+    }
+  ]
+}
