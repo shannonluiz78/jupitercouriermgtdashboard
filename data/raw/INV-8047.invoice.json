@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "INV-8047",
+    "invoiceDate": "2026-08-02",
+    "dueDate": "2026-09-01",
+    "gstRate": "9",
+    "customerName": "Progress Piling Co Pte Ltd",
+    "customerAttn": "Finance Dept",
+    "customerAddress": "5 Upper Aljunied Link\nQuartz Industrial Building #06-05\nSingapore 367903",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 15,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-07",
+      "pickup": "Same Day",
+      "dropoff": "",
+      "consignNbr": "800484",
+      "notes": ""
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 12,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-20",
+      "pickup": "Same Day",
+      "dropoff": "",
+      "consignNbr": "800485",
+      "notes": ""
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 12,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-27",
+      "pickup": "Same Day",
+      "dropoff": "",
+      "consignNbr": "800488",
+      "notes": ""
+    }
+  ]
+}
