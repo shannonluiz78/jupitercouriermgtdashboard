@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "BREADTALK INV-0701",
+    "invoiceDate": "2026-08-01",
+    "dueDate": "2026-08-31",
+    "gstRate": "9",
+    "customerName": "Food Republic Pte Ltd",
+    "customerAttn": "Finance Payable",
+    "customerAddress": "30 Tai Seng Street #09-01\nBreadtalk IHQ\nSingapore 534013",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-03",
+      "pickup": "Food Republic Pte Ltd",
+      "dropoff": "Citibank -Changi Business Park",
+      "consignNbr": "800661",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 18,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-14",
+      "pickup": "Food Republic Pte Ltd",
+      "dropoff": "Adventures-Stadium Dr",
+      "consignNbr": "800601",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 18,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-30",
+      "pickup": "Food Republic Pte Ltd",
+      "dropoff": "Sport SG-Stadium Dr",
+      "consignNbr": "800602",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    }
+  ]
+}

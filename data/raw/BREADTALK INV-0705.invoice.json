@@ -1,0 +1,34 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "BREADTALK INV-0705",
+    "invoiceDate": "2026-08-01",
+    "dueDate": "2026-08-31",
+    "gstRate": "9",
+    "customerName": "Food Junction Management Pte Ltd",
+    "customerAttn": "Finance Payable",
+    "customerAddress": "30 Tai Seng Street #09-01\nBreadtalk IHQ\nSingapore 534013",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-28",
+      "pickup": "Food Junction Management Pte Ltd",
+      "dropoff": "APL- Great World",
+      "consignNbr": "800552",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    }
+  ]
+}

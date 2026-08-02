@@ -1,0 +1,60 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "TSGP-0701",
+    "invoiceDate": "2026-08-01",
+    "dueDate": "2026-08-31",
+    "gstRate": "9",
+    "customerName": "T S Global Procurement Co Pte. Ltd",
+    "customerAttn": "Finance",
+    "customerAddress": "2 Venture Drive #19-23\nVision Exchange\nSingapore 608526",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 35,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-06",
+      "pickup": "TSGP",
+      "dropoff": "Axis Bank Ltd",
+      "consignNbr": "801501",
+      "notes": "Super Quick · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 35,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-07",
+      "pickup": "TSGP",
+      "dropoff": "Axis Bank Ltd",
+      "consignNbr": "801502",
+      "notes": "Super Quick · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 28,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-07-08",
+      "pickup": "TSGP",
+      "dropoff": "Axis Bank Ltd",
+      "consignNbr": "801503",
+      "notes": "Quick · ⚠ region missing not recognized, defaulted to CBD"
+    }
+  ]
+}
