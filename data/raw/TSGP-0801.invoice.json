@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "TSGP-0801",
+    "invoiceDate": "2026-09-01",
+    "dueDate": "2026-09-30",
+    "gstRate": "9",
+    "customerName": "T S Global Procurement Co Pte. Ltd",
+    "customerAttn": "Finance",
+    "customerAddress": "2 Venture Drive #19-23\nVision Exchange\nSingapore 608526",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "bankName": "Maybank Singapore",
+    "bankAccountNumber": "04011614980",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 25,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-03",
+      "pickup": "TSGP",
+      "dropoff": "Citibank N.A",
+      "consignNbr": "801504",
+      "notes": "Quick · ⚠ region missing not recognized, defaulted to CBD"
+    }
+  ]
+}

@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "BREADTALK INV-0801",
+    "invoiceDate": "2026-09-01",
+    "dueDate": "2026-09-30",
+    "gstRate": "9",
+    "customerName": "Food Republic Pte Ltd",
+    "customerAttn": "Finance Payable",
+    "customerAddress": "30 Tai Seng Street #09-01\nBreadtalk IHQ Singapore 534013",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "bankName": "Maybank Singapore",
+    "bankAccountNumber": "04011614980",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-04",
+      "pickup": "Food Republic Pte Ltd",
+      "dropoff": "CPPL-Great World",
+      "consignNbr": "800553",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-07",
+      "pickup": "Food Republic Pte Ltd",
+      "dropoff": "Citibank-Changi Business",
+      "consignNbr": "800662",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-11",
+      "pickup": "Food Republic Pte Ltd",
+      "dropoff": "JTB-Kepple",
+      "consignNbr": "800603",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-14",
+      "pickup": "Food Republic Pte Ltd",
+      "dropoff": "SCAPE-Orchard Link",
+      "consignNbr": "800604",
+      "notes": ""
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-19",
+      "pickup": "Food Republic Pte Ltd",
+      "dropoff": "Omnicom-MacDonald House",
+      "consignNbr": "800606",
+      "notes": ""
+    }
+  ]
+}
