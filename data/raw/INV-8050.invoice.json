@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "INV-8050",
+    "invoiceDate": "2026-09-01",
+    "dueDate": "2026-10-01",
+    "gstRate": "9",
+    "customerName": "Progress Piling Co Pte Ltd",
+    "customerAttn": "Finance Dept",
+    "customerAddress": "5 Upper Aljunied Link Quartz Industrial Building #06-05 Singapore 367903",
+    "paynowUen": "53502679W",
+    "paymentTerms": "30 Days",
+    "bankName": "Maybank Singapore",
+    "bankAccountNumber": "04011614980",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "Special Zone|20",
+      "qty": 1,
+      "rate": 28,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-03",
+      "pickup": "",
+      "dropoff": "",
+      "consignNbr": "800492",
+      "notes": ""
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 15,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-14",
+      "pickup": "",
+      "dropoff": "",
+      "consignNbr": "801703",
+      "notes": ""
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 12,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-17",
+      "pickup": "",
+      "dropoff": "",
+      "consignNbr": "800501",
+      "notes": ""
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 12,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-27",
+      "pickup": "",
+      "dropoff": "",
+      "consignNbr": "800507",
+      "notes": ""
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": false,
+      "orderDate": "2026-08-28",
+      "pickup": "",
+      "dropoff": "",
+      "consignNbr": "800508",
+      "notes": ""
+    }
+  ]
+}

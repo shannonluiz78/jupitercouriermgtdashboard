@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "INV-8051",
+    "invoiceDate": "2026-09-01",
+    "dueDate": "2026-10-01",
+    "gstRate": "9",
+    "customerName": "AP Geotechic Pte Ltd",
+    "customerAttn": "Finance Dept",
+    "customerAddress": "5 Upper Aljunied Link Quartz Industrial Building \n#06-05 Singapore 367903",
+    "paynowUen": "53502679W",
+    "paymentTerms": "30 Days",
+    "bankName": "Maybank Singapore",
+    "bankAccountNumber": "04011614980",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 18,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-14",
+      "pickup": "",
+      "dropoff": "",
+      "consignNbr": "801651",
+      "notes": ""
+    }
+  ]
+}
