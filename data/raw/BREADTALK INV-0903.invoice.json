@@ -1,0 +1,88 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "BREADTALK INV-0903",
+    "invoiceDate": "2026-10-01",
+    "dueDate": "2026-10-31",
+    "gstRate": "9",
+    "customerName": "BreadTalk Pte Ltd",
+    "customerAttn": "FINANCE",
+    "customerAddress": "30 TAI SENG STREET #09-01 SINGAPORE 534013",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "bankName": "Maybank Singapore",
+    "bankAccountNumber": "04011614980",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 30,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-08-20",
+      "pickup": "BreadTalk Pte Ltd",
+      "dropoff": "Sun Plaza",
+      "consignNbr": "800910",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-03",
+      "pickup": "BreadTalk Pte Ltd",
+      "dropoff": "Hongkong Land",
+      "consignNbr": "800577",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 30,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-10",
+      "pickup": "BreadTalk Pte Ltd",
+      "dropoff": "JCAT-Jewel",
+      "consignNbr": "800918",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-16",
+      "pickup": "BreadTalk Pte Ltd",
+      "dropoff": "CP1",
+      "consignNbr": "800579",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-24",
+      "pickup": "BreadTalk Pte Ltd",
+      "dropoff": "Tan Peng Chin LLC",
+      "consignNbr": "800578",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    }
+  ]
+}

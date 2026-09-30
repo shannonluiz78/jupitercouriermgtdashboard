@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "BREADTALK INV-0904",
+    "invoiceDate": "2026-10-01",
+    "dueDate": "2026-10-31",
+    "gstRate": "9",
+    "customerName": "Taster Food Pte Ltd",
+    "customerAttn": "FINANCE",
+    "customerAddress": "30 TAI SENG STREET #09-01 SINGAPORE 534013",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "bankName": "Maybank Singapore",
+    "bankAccountNumber": "04011614980",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 30,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-15",
+      "pickup": "Taster Food Pte Ltd",
+      "dropoff": "MBS",
+      "consignNbr": "800554",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 30,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-21",
+      "pickup": "Taster Food Pte Ltd",
+      "dropoff": "Resorts World",
+      "consignNbr": "800555",
+      "notes": "Same-day delivery (11:00am cut-off) · ⚠ region missing not recognized, defaulted to CBD"
+    }
+  ]
+}
