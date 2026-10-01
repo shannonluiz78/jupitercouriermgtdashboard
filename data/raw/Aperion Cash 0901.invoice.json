@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "Cash 0901",
+    "invoiceDate": "2026-09-01",
+    "dueDate": "2026-09-30",
+    "gstRate": "9",
+    "customerName": "Aperion Tech Pte Ltd - Cash",
+    "customerAttn": "FINANCE",
+    "customerAddress": "",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "bankName": "Maybank Singapore",
+    "bankAccountNumber": "04011614980",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 23,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-01",
+      "pickup": "138 MKT ST",
+      "dropoff": "AIA",
+      "consignNbr": "801552",
+      "notes": "Quick · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 18,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-02",
+      "pickup": "9 TEMASEK",
+      "dropoff": "138 MARKET",
+      "consignNbr": "801646",
+      "notes": "Quick · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 18,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-03",
+      "pickup": "138 MKT ST",
+      "dropoff": "9 TEMASEK",
+      "consignNbr": "801554",
+      "notes": "Quick · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 25,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-18",
+      "pickup": "138 MKT ST",
+      "dropoff": "ORIENT WEALTH",
+      "consignNbr": "801556",
+      "notes": "Quick · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 18,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-21",
+      "pickup": "138 MKT ST",
+      "dropoff": "FWD",
+      "consignNbr": "801555",
+      "notes": "Quick · ⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 30,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-24",
+      "pickup": "138 MKT ST",
+      "dropoff": "TUBO CAPITAL",
+      "consignNbr": "801557",
+      "notes": "Quick · ⚠ region missing not recognized, defaulted to CBD"
+    }
+  ]
+}
