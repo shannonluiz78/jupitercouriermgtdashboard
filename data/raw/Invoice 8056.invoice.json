@@ -1,0 +1,101 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "Invoice 8056",
+    "invoiceDate": "2026-10-01",
+    "dueDate": "2026-10-31",
+    "gstRate": "9",
+    "customerName": "Tanny Services Pte Ltd",
+    "customerAttn": "Finance",
+    "customerAddress": "5 Upper Aljunied Link\nQuartz Industrial Building #06-05\nSingapore 367903",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "bankName": "Maybank Singapore",
+    "bankAccountNumber": "04011614980",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 18,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-01",
+      "pickup": "Same Day",
+      "dropoff": "",
+      "consignNbr": "800510",
+      "notes": "⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-03",
+      "pickup": "Same Day",
+      "dropoff": "",
+      "consignNbr": "800515",
+      "notes": "⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 18,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-24",
+      "pickup": "Same Day",
+      "dropoff": "",
+      "consignNbr": "800530",
+      "notes": "⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-28",
+      "pickup": "Same Day",
+      "dropoff": "",
+      "consignNbr": "800531",
+      "notes": "⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 25,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-28",
+      "pickup": "Urgent Service",
+      "dropoff": "",
+      "consignNbr": "800532",
+      "notes": "⚠ region missing not recognized, defaulted to CBD"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-30",
+      "pickup": "Same Day",
+      "dropoff": "",
+      "consignNbr": "800538",
+      "notes": "⚠ region missing not recognized, defaulted to CBD"
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "Invoice 8058",
+    "invoiceDate": "2026-10-01",
+    "dueDate": "2026-10-31",
+    "gstRate": "9",
+    "customerName": "Asian Sealand Engineering Pte Ltd",
+    "customerAttn": "Finance",
+    "customerAddress": "5 Upper Aljunied Link\nQuartz Industrial Building #06-05\nSingapore 367903",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Net 30 days",
+    "bankName": "Maybank Singapore",
+    "bankAccountNumber": "04011614980",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 56,
+      "surcharge": 0,
+      "override": true,
+      "orderDate": "2026-09-02",
+      "pickup": "Same Day-2 Ways",
+      "dropoff": "",
+      "consignNbr": "800513",
+      "notes": "⚠ region missing not recognized, defaulted to CBD"
+    }
+  ]
+}
