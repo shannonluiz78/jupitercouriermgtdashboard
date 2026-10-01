@@ -1,0 +1,49 @@
+{
+  "meta": {
+    "companyName": "Jupiter Courier Services",
+    "companyUen": "53502679W",
+    "companyEmail": "jupitercouriersg@gmail.com",
+    "companyPhone": "9769 5999",
+    "invoiceNo": "Cash 0801",
+    "invoiceDate": "2026-09-01",
+    "dueDate": "2026-09-30",
+    "gstRate": "9",
+    "customerName": "Aperion Tech Pte Ltd - Cash",
+    "customerAttn": "",
+    "customerAddress": "138 Market Street CapitaGreen #16-01 \nSingapore 048946 ",
+    "paynowUen": "53502679W",
+    "paymentTerms": "Cash Term",
+    "bankName": "Maybank Singapore",
+    "bankAccountNumber": "04011614980",
+    "invoiceNotes": "",
+    "gstEnabled": false
+  },
+  "items": [
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": false,
+      "orderDate": "2026-08-26",
+      "pickup": "133 Cecil Street",
+      "dropoff": "138 Market Street",
+      "consignNbr": "",
+      "notes": "Cash Term"
+    },
+    {
+      "serviceType": "Document",
+      "region": "CBD|20",
+      "qty": 1,
+      "rate": 20,
+      "surcharge": 0,
+      "override": false,
+      "orderDate": "2026-08-26",
+      "pickup": "133 Cecil Street",
+      "dropoff": "138 Market Street",
+      "consignNbr": "",
+      "notes": "Cash Term"
+    }
+  ]
+}
